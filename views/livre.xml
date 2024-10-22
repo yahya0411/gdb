@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="livre_form_view">
+            <field name="name">livre.form.view</field>
+            <field name="model">livre</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="titre" />
+                                <field name="prenom"/>
+                                <field name="isbn"/>
+                                <field name="nbre_pages"/>
+                                <field name="image_libre"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="livre_list_view">
+            <field name="name">livre.list.view</field>
+            <field name="model">livre</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="titre" />
+                    <field name="prenom"/>
+                    <field name="isbn"/>
+                    <field name="nbre_pages"/>
+                    <field name="image_libre"/>
+                </tree>
+            </field>
+        </record>
+    </data>
+</odoo>
