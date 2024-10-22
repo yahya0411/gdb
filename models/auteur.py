@@ -1,5 +1,3 @@
-from email.policy import default
-
 from odoo import models, fields
 class Auteur (models.Model) :
     _name = 'auteur'

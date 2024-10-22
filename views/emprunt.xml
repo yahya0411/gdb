@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="auteur_form_view">
+            <field name="name">auteur.form.view</field>
+            <field name="model">auteur</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="nom" />
+                                <field name="prenom"/>
+                                <field name="date_naissance"/>
+                            </group>
+                            <group>
+                                <field name="nationalite"/>
+                                <field name="sexe" />
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="auteur_list_view">
+            <field name="name">auteur.list.view</field>
+            <field name="model">auteur</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="nom" />
+                    <field name="prenom" />
+                    <field name="date_naissance" />
+                    <field name="nationalite"/>
+                    <field name="sexe" />
+                </tree>
+            </field>
+        </record>
+        <record id="action_gdb_emprunt" model="ir.actions.act_window">
+        <field name="name">Emprunts</field>
+        <field name="res_model">gdb.emprunt</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_type">form</field>
+        <field name="view_id" ref="view_emprunt_tree" />
+    </record>
+    </data>
+     <menuitem id="menu_gdb_root"
+        name="Bibliothèque"
+    />
+
+    <menuitem id="menu_gdb_emprunt"
+        name="Emprunts"
+        parent="menu_gdb_root"
+        action="action_gdb_emprunt"
+    />
+
+</odoo>

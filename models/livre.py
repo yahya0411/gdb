@@ -2,8 +2,8 @@ from odoo import models, fields
 
 class Livre(models.Model):
     _name = 'livre'
-    titre = models.Char(String = "Titre", required = True)
-    langue_livre =models.Selection([
+    titre = fields.Char(String = 'Titre', required = True)
+    langue_livre = fields.Selection([
         ('francais','Francais'),
         ('arabe','Arabe'),
         ('anglais','Anglais'),

@@ -34,5 +34,20 @@
                 </tree>
             </field>
         </record>
+    <record id="action_gdb_livre" model="ir.actions.act_window">
+        <field name="name">Livres</field>
+        <field name="res_model">gdb.livre</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_type">form</field>
+        <field name="view_id" ref="view_livre_tree" />
+    </record>
     </data>
+      <menuitem id="menu_gdb_root"
+        name="Bibliothèque"
+    />
+    <menuitem id="menu_gdb_livre"
+        name="Livres"
+        parent="menu_gdb_root"
+        action="action_gdb_livre"
+    />
 </odoo>

@@ -34,5 +34,22 @@
                 </tree>
             </field>
         </record>
+        <record id="action_gdb_emprunteur" model="ir.actions.act_window">
+        <field name="name">Emprunteurs</field>
+        <field name="res_model">gdb.emprunteur</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_type">form</field>
+        <field name="view_id" ref="view_emprunteur_tree" />
+    </record>
     </data>
+        <menuitem id="menu_gdb_root"
+        name="Bibliothèque"
+    />
+
+
+    <menuitem id="menu_gdb_emprunteur"
+        name="Emprunteurs"
+        parent="menu_gdb_root"
+        action="action_gdb_emprunteur"
+    />
 </odoo>

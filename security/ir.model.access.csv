@@ -1,2 +1,5 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write, perm_create,perm_unlink
 auteur_id,auteur,model_auteur,base.group_user,1,1,1,1
+livre_id,livre,model_livre,base.group_user,1,1,1,1
+emprunt_id,emprunt,model_emprunt,base.group_user,1,1,1,1
+emprunteur_id,emprunteur,model_emprunteur,base.group_user,1,1,1,1
