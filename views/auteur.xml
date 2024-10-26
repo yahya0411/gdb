@@ -37,14 +37,12 @@
             </field>
         </record>
         <record id="action_gdb_auteur" model="ir.actions.act_window">
-        <field name="name">Auteurs</field>
-        <field name="res_model">gdb.auteur</field>
-        <field name="view_mode">tree,form</field>
-        <field name="view_type">form</field>
-        <field name="view_id" ref="view_auteur_tree" />
+            <field name="name">Auteurs</field>
+            <field name="res_model">auteur</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_type">form</field>
+            <field name="view_id" ref="auteur_list_view" />
         </record>
-    </data>
-
 
     <menuitem id="menu_gdb_root" name="Bibliothèque"/>
 
@@ -53,5 +51,5 @@
         parent="menu_gdb_root"
         action="action_gdb_auteur"
     />
-
+    </data>
 </odoo>

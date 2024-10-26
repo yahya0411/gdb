@@ -2,8 +2,8 @@
 <odoo>
     <data>
         <record model="ir.ui.view" id="emprunteur_form_view">
-            <field name="name">livre.form.view</field>
-            <field name="model">livre</field>
+            <field name="name">emprunteur.form.view</field>
+            <field name="model">emprunteur</field>
             <field name="arch" type="xml">
                 <form>
                     <sheet>
@@ -22,8 +22,8 @@
         </record>
 
         <record model="ir.ui.view" id="emprunteur_list_view">
-            <field name="name">livre.list.view</field>
-            <field name="model">livre</field>
+            <field name="name">emprunteur.list.view</field>
+            <field name="model">emprunteur</field>
             <field name="arch" type="xml">
                 <tree>
                 <field name="nom" />
@@ -35,21 +35,20 @@
             </field>
         </record>
         <record id="action_gdb_emprunteur" model="ir.actions.act_window">
-        <field name="name">Emprunteurs</field>
-        <field name="res_model">gdb.emprunteur</field>
+        <field name="name">emprunteurs</field>
+        <field name="res_model">emprunteur</field>
         <field name="view_mode">tree,form</field>
         <field name="view_type">form</field>
-        <field name="view_id" ref="view_emprunteur_tree" />
+        <field name="view_id" ref="emprunteur_list_view" />
     </record>
-    </data>
-        <menuitem id="menu_gdb_root"
+               <menuitem id="menu_gdb_root"
         name="Bibliothèque"
     />
-
 
     <menuitem id="menu_gdb_emprunteur"
         name="Emprunteurs"
         parent="menu_gdb_root"
         action="action_gdb_emprunteur"
     />
+    </data>
 </odoo>

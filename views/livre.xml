@@ -10,9 +10,8 @@
                         <group>
                             <group>
                                 <field name="titre" />
-                                <field name="prenom"/>
                                 <field name="isbn"/>
-                                <field name="nbre_pages"/>
+                                <field name="nbre_page"/>
                                 <field name="image_libre"/>
                             </group>
                         </group>
@@ -27,22 +26,20 @@
             <field name="arch" type="xml">
                 <tree>
                     <field name="titre" />
-                    <field name="prenom"/>
                     <field name="isbn"/>
-                    <field name="nbre_pages"/>
+                    <field name="nbre_page"/>
                     <field name="image_libre"/>
                 </tree>
             </field>
         </record>
     <record id="action_gdb_livre" model="ir.actions.act_window">
         <field name="name">Livres</field>
-        <field name="res_model">gdb.livre</field>
+        <field name="res_model">livre</field>
         <field name="view_mode">tree,form</field>
         <field name="view_type">form</field>
-        <field name="view_id" ref="view_livre_tree" />
+        <field name="view_id" ref="livre_list_view" />
     </record>
-    </data>
-      <menuitem id="menu_gdb_root"
+            <menuitem id="menu_gdb_root"
         name="Bibliothèque"
     />
     <menuitem id="menu_gdb_livre"
@@ -50,4 +47,5 @@
         parent="menu_gdb_root"
         action="action_gdb_livre"
     />
+    </data>
 </odoo>
