@@ -32,6 +32,19 @@
                 </tree>
             </field>
         </record>
+                 <record model="ir.ui.view" id="view_livre_search">
+               <field name="name">livre.search</field>
+            <field name="model">livre</field>
+            <field name="arch" type="xml">
+                <search string="Livre">
+
+
+<field name="isbn" string="ISBN"/>
+
+                </search>
+            </field>
+ </record>
+
     <record id="action_gdb_livre" model="ir.actions.act_window">
         <field name="name">Livres</field>
         <field name="res_model">livre</field>

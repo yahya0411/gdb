@@ -11,6 +11,9 @@
                             <group>
                                 <field name="date_debut"/>
                                 <field name="date_fin" />
+                                <field name="rendu" />
+                                <field name="emprunteur_id"/>
+                    <field name="auteur_id"/>
                             </group>
                         </group>
                     </sheet>
@@ -25,9 +28,35 @@
                 <tree>
                     <field name="date_debut" />
                     <field name="date_fin" />
+                    <field name="rendu" />
+                    <field name="emprunteur_id"/>
+                    <field name="auteur_id"/>
                 </tree>
             </field>
         </record>
+
+         <record model="ir.ui.view" id="view_emprunt_search">
+               <field name="name">emprunt.search</field>
+            <field name="model">emprunt</field>
+            <field name="arch" type="xml">
+                <search string="Emprunt">
+
+              <field name="emprunteur_id"/>
+                <field name="auteur_id"/>
+
+<field name="livre_id" string="ISBN" domain="[('livre_id.isbn')]"/>
+
+                    <filter string="Auteurs Tunisiens" name="auteurs_tunisiens"
+                    domain="[('auteur_id.nationalite', '=', 'tunisien')]" />
+
+                    <group expand="0" string="Group By">
+                      <filter string="Rendu" name="group_by_rendu" domain="[]" context="{'group_by': 'rendu'}" />
+                    </group>
+
+                </search>
+            </field>
+ </record>
+
         <record id="action_gdb_emprunt" model="ir.actions.act_window">
         <field name="name">Emprunts</field>
         <field name="res_model">emprunt</field>

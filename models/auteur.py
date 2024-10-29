@@ -1,7 +1,7 @@
 from odoo import models, fields
 class Auteur (models.Model) :
     _name = 'auteur'
-
+    _rec_name = 'nom'
     nom=fields.Char(string="Nom")
 
     prenom= fields.Char(string="Prénom")
@@ -13,3 +13,4 @@ class Auteur (models.Model) :
     ('homme', 'Homme'),
     ('femme',' Femme')
     ])
+    livre_ids = fields.One2many('livre', 'auteur_id',string="Livre")

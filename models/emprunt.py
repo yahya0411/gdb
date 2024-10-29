@@ -7,3 +7,6 @@ class Emprunt(models.Model):
         ('oui','Oui'),
         ('non','Non')
     ])
+    emprunteur_id = fields.Many2one('emprunteur', string="Emprunteur")
+    auteur_id = fields.Many2one('auteur', string="Auteur")
+    livre_id = fields.One2many('livre', 'emprunt_id', string='Emprunt')
